@@ -40,12 +40,7 @@ def set_phone_number(value):
 
 def set_date_of_birth(*, month, year, day):
     browser.element('#dateOfBirthInput').click()
-    # date_picker.select_date(month, year, day)
-    browser.element('.react-datepicker__month-select').click()
-    browser.element(f'[value="{month}"]').click()
-    browser.element('.react-datepicker__year-select').click()
-    browser.element(f'[value="{year}"]').click()
-    browser.element(f'.react-datepicker__day--0{day}').click()
+    date_picker.select_date(month, year, day)
 
 
 def upload_picture(value):
@@ -84,7 +79,6 @@ def submit():
 
 
 def should_have_submitted(data):
-    dialog = browser.element('.modal-content')
-    rows = dialog.all('tbody tr')
-    for row, values in data:
-        rows.element_by(have.text(row)).all('td')[1].should(have.exact_text(values))
+    rows = modal.dialog.all('tbody tr')
+    for row, value in data:
+        rows.element_by(have.text(row)).all('td')[1].should(have.exact_text(value))
