@@ -1,12 +1,10 @@
-import os
-
 from selene import have, command
 from selene.support.shared import browser
 from demoqa_tests.model.controls import drop_down, modal, date_picker, radio_button, check_boxes
 from demoqa_tests.utils import path_to_file
 
-state = browser.element('#state')
 
+# state = browser.element('#state')
 
 def given_opened():
     browser.open('/automation-practice-form')

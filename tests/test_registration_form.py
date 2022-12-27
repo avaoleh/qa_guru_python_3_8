@@ -1,7 +1,8 @@
 from demoqa_tests.model.pages import registration_form
 
+
 def test_submit_registration_form():
-    #GIVEN
+    # GIVEN
     registration_form.given_opened()
 
     # WHEN
